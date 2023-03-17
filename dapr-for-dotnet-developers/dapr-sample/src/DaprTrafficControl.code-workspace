@@ -1,0 +1,36 @@
+{
+	"folders": [
+		{
+			"path": "Infrastructure"
+		},
+		{
+			"path": "./VehicleRegistrationService"
+		},
+		{
+			"path": "./FineCollectionService"
+		},
+		{
+			"path": "./TrafficControlService"
+		},
+		{
+			"path": "./Simulation"
+		},
+		{
+			"path": "./VisualSimulation"
+		},
+		{
+			"path": "./dapr"
+		},
+		{
+			"path": "./k8s"
+		},
+		{
+			"path": "Observability"
+		}
+	],
+	"settings": {},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": []
+	}
+}
