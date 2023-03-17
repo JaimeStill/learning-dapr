@@ -1,5 +1,10 @@
 # Learning Dapr
 
+## Study
+
+* [Dapr](./dapr)
+* [Dapr for .NET Developers](./dapr-for-dotnet-developers/)
+
 ## Links
 
 * [Dapr Docs](https://docs.dapr.io/)
