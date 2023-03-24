@@ -9,6 +9,13 @@ https://docs.dapr.io/concepts/overview/
 * [Configuration](./configuration.md)
 * [Resiliency](./resiliency.md)
 * [Observability](./observability.md)
+* [Security](./security.md)
+* [Services](./services/)
+    * [Sidecar](./services/sidecar.md)
+    * [Operator](./services/operator.md)
+    * [Placement](./services/placement.md)
+    * [Sentry](./services/sentry.md)
+    * [Sidecar Injector](./services/sidecar-injector.md)
 
 ![dapr-overview](https://docs.dapr.io/images/overview.png)
 
