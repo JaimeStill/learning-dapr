@@ -16,6 +16,9 @@ https://docs.dapr.io/concepts/overview/
     * [Placement](./services/placement.md)
     * [Sentry](./services/sentry.md)
     * [Sidecar Injector](./services/sidecar-injector.md)
+* [Service Meshes](./service-meshes.md)
+* [Terminology](./terminology.md)
+* [FAQs](./faqs.md)
 
 ![dapr-overview](https://docs.dapr.io/images/overview.png)
 
