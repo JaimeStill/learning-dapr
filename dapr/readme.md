@@ -20,6 +20,8 @@ https://docs.dapr.io/
     * [FAQs](./concepts/faqs.md)
 * [Getting Started](./getting-started)
     * [Install the Dapr CLI](./getting-started/install-dapr-cli.md)
+    * [Init Dapr Locally](./getting-started/init-dapr-locally.md)
+    * [Use the Dapr API](./getting-started/use-dapr-api.md)
 * [Quickstarts](./quickstarts)
 * [Tutorials](./tutorials)
 * [Developing Applications](./developing-applications)
