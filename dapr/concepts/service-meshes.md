@@ -23,7 +23,7 @@ Importantly, Dapr provides service discovery and invocation via names, which is 
 
 Another difference between Dapr and service meshes is observability (tracing and metrics). Service meshes operate at the network level and trace the network calls between services. Dapr does this with service invocation. Moreover, Dapr also provides observability (tracing and metrics) over pub/sub calls using trace IDs written into the Cloud Events envelope. This means that metrics and tracing with Dapr is more extensive than with a service mesh for applications that use both service-to-service invocation and pub/sub to communicate.
 
-The illustration below captures teh overlapping features and unique capabilities that Dapr and service meshes offer:
+The illustration below captures the overlapping features and unique capabilities that Dapr and service meshes offer:
 
 ![service-mesh](https://docs.dapr.io/images/service-mesh.png)
 

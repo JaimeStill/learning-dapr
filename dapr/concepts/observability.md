@@ -36,7 +36,7 @@ Dapr generates [logs](https://docs.dapr.io/operations/monitoring/logging/logs/) 
 
 ### Metrics
 
-Metrics are teh series of measured values and counts that are collected and stored over time. [Dapr metrics](https://docs.dapr.io/operations/monitoring/metrics/) provide monitoring capabilities to understand the behavior of the Dapr sidecar and control plane. For example, the metrics between a Dapr sidecar and the user application show call latency, traffic failures, error rates of requests, etc. Dapr [control plane metrics](https://github.com/dapr/dapr/blob/master/docs/development/dapr-metrics.md) show sidecar injection failures and the health of control plane services, including CPU usage, number of actor placements made, etc.
+Metrics are the series of measured values and counts that are collected and stored over time. [Dapr metrics](https://docs.dapr.io/operations/monitoring/metrics/) provide monitoring capabilities to understand the behavior of the Dapr sidecar and control plane. For example, the metrics between a Dapr sidecar and the user application show call latency, traffic failures, error rates of requests, etc. Dapr [control plane metrics](https://github.com/dapr/dapr/blob/master/docs/development/dapr-metrics.md) show sidecar injection failures and the health of control plane services, including CPU usage, number of actor placements made, etc.
 
 ### Health Checks
 

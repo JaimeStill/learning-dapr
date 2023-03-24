@@ -18,3 +18,8 @@ https://docs.dapr.io/
     * [Service Meshes](./concepts/service-meshes.md)
     * [Terminology](./concepts/terminology.md)
     * [FAQs](./concepts/faqs.md)
+* [Getting Started](./getting-started)
+    * [Install the Dapr CLI](./getting-started/install-dapr-cli.md)
+* [Quickstarts](./quickstarts)
+* [Tutorials](./tutorials)
+* [Developing Applications](./developing-applications)

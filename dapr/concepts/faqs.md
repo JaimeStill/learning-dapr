@@ -6,7 +6,7 @@ https://docs.dapr.io/concepts/faq/
 
 ## How does Dapr compare to service meshes such as Istio, Linkerd, or OSM?
 
-Dapr is not a service mesh. While service meshes focus on fine-grained network control, Dapr is focused on helping developers build distributed applications. Both Dapr and service meshes use the sidecar pattern and run alongside the application. They do have some overlapping features, but also offer unique benefits. For more information please read teh [Dapr & service meshes](https://docs.dapr.io/concepts/service-mesh/) concept page.
+Dapr is not a service mesh. While service meshes focus on fine-grained network control, Dapr is focused on helping developers build distributed applications. Both Dapr and service meshes use the sidecar pattern and run alongside the application. They do have some overlapping features, but also offer unique benefits. For more information please read the [Dapr & service meshes](https://docs.dapr.io/concepts/service-mesh/) concept page.
 
 ## Performance Benchmarks
 
@@ -28,7 +28,7 @@ The Dapr runtime SDKs have language-specific actor frameworks. for example, the 
 
 ### Does Dapr have an SDKs I can use if I want to work with a particular programming language or framework?
 
-To make using Dapr more natural for different languages, it includes [language specific SDKs](https://docs.dapr.io/developing-applications/sdks/) for Go, Java, JavaScript, .NET, Python, PHP, Rust, and C++. These SDKs expose teh functionality in the dapr building blocks, such as saving state, publishing an event or creating an actor, through a typed language API rather than calling the http/gRPC APi. This enables you to write a combination of stateless and stateful functions and actors all in the language of your choice. And because these SDKs share the Dapr runtime, you get cross-language actor and functions support.
+To make using Dapr more natural for different languages, it includes [language specific SDKs](https://docs.dapr.io/developing-applications/sdks/) for Go, Java, JavaScript, .NET, Python, PHP, Rust, and C++. These SDKs expose the functionality in the dapr building blocks, such as saving state, publishing an event or creating an actor, through a typed language API rather than calling the http/gRPC APi. This enables you to write a combination of stateless and stateful functions and actors all in the language of your choice. And because these SDKs share the Dapr runtime, you get cross-language actor and functions support.
 
 ### What frameworks does Dapr integrate with?
 
