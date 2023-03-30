@@ -5,3 +5,4 @@
 * [Publish and Subscribe](./publish-subscribe/)
 * [Bindings](./bindings/)
 * [Secrets Management](./secrets-management/)
+* [Configuration](./configuration/)

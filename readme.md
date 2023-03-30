@@ -3,6 +3,9 @@
 ## Study
 
 * [Dapr](./dapr)
+    * [Concepts](./dapr/concepts/)
+    * [Getting Started](./dapr/getting-started/)
+    * [Quickstarts](./dapr/quickstarts/)
 * [Dapr for .NET Developers](./dapr-for-dotnet-developers/)
 
 ## Links

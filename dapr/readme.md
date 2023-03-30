@@ -28,5 +28,6 @@ https://docs.dapr.io/
     * [Publish and Subscribe](./quickstarts/publish-subscribe/)
     * [Bindings](./quickstarts/bindings/)
     * [Secrets Management](./quickstarts/secrets-management/)
+    * [Configuration](./quickstarts/configuration/)
 * [Tutorials](./tutorials)
 * [Developing Applications](./developing-applications)
