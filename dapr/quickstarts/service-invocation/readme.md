@@ -20,7 +20,7 @@ For this example, you will need:
 
 ## Step 2: Set up the environment
 
-[Quickstarts repo](https://github.com/dapr/quickstarts/tree/master/service_invocation) was cloned and the `service_invocation/csharp/http` directory was copied to [`csharp/`](./csharp/) local to this readme.
+[Quickstarts repo](https://github.com/dapr/quickstarts/) was cloned and the `service_invocation/csharp/http` directory was copied to [`csharp/`](./csharp/) local to this readme.
 
 ## Step 3: Run `order-processor` service
 

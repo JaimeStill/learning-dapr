@@ -23,5 +23,7 @@ https://docs.dapr.io/
     * [Init Dapr Locally](./getting-started/init-dapr-locally.md)
     * [Use the Dapr API](./getting-started/use-dapr-api.md)
 * [Quickstarts](./quickstarts)
+    * [Service Invocation](./quickstarts/service-invocation/)
+    * [State Management](./quickstarts/state-management/)
 * [Tutorials](./tutorials)
 * [Developing Applications](./developing-applications)
