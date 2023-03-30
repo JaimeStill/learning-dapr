@@ -23,9 +23,9 @@ For this example, you will need:
 
 ## Step 1: Set up the environment
 
-[Quickstarts repo](https://github.com/dapr/quickstarts/) was cloned and the `bindings/csharp/sdk/` directory was copied to [`csharp/sdk/`](./csharp/sdk/) local to this readme. Additionally, `bindings/components` was copied to [`csharp/components`](./csharp/components/), `bindings/db` was copied to [`csharp/db`](./csharp/db/), and `bindings/orders.json` was copied to [`csharp/sdk/batch/orders.json`](./csharp/sdk/batch/orders.json).
+[Quickstarts repo](https://github.com/dapr/quickstarts/) was cloned and the `bindings/csharp/sdk/` directory was copied to [`src/dotnet/sdk/`](./src/dotnet/sdk/) local to this readme. Additionally, `bindings/components` was copied to [`src/components`](./src/components/), `bindings/db` was copied to [`src/db`](./src/db/), and `bindings/orders.json` was copied to [`src/dotnet/sdk/batch/orders.json`](./src/dotnet/sdk/batch/orders.json).
 
-Modified [`csharp/sdk/batch.program.cs`](./csharp/sdk/batch/program.cs#L36) as follows:
+Modified [`src/dotnet/sdk/batch.program.cs`](./src/dotnet/sdk/batch/program.cs#L36) as follows:
 
 ```cs
 // initial
@@ -37,9 +37,9 @@ string jsonFile = File.ReadAllText("./orders.json");
 
 ## Step 2: Run PostgreSQL Docker container locally
 
-Run the [PostgreSQL instance](https://www.postgresql.org/) locally in a Docker container on your machine. The quickstart sample includes a [Docker Comopse file](./csharp/db/docker-compose.yml) to locally customize, build, run, and initialize the `postgres` container with a default `orders` table.
+Run the [PostgreSQL instance](https://www.postgresql.org/) locally in a Docker container on your machine. The quickstart sample includes a [Docker Comopse file](./src/db/docker-compose.yml) to locally customize, build, run, and initialize the `postgres` container with a default `orders` table.
 
-In a terminal window, navigate to [`csharp/db`](./csharp/db/) and run the following:
+In a terminal window, navigate to [`src/db`](./src/db/) and run the following:
 
 ``` bash
 docker compose up
@@ -61,7 +61,7 @@ samples/postgres | 0.0.0.0:5432->5432/tcp | postgres
 
 ## Step 3: Schedule a Cron job and write to the database
 
-In a terminal window, navigate to [`csharp/sdk/batch`](./csharp/sdk/batch/) and run the following:
+In a terminal window, navigate to [`src/dotnet/sdk/batch`](./src/dotnet/sdk/batch/) and run the following:
 
 ```bash
 dotnet restore
@@ -70,9 +70,9 @@ dotnet build
 dapr run --app-id batch-sdk --app-port 7002 --resources-path ../../compoennts -- dotnet run
 ```
 
-The code inside the `process_batch` function is executed every 10 seconds (defined in [`binding-cron.yaml`](./csharp/components/binding-cron.yaml) in the `components` directory). The binding trigger looks for a route called via HTTP POST in your application by the Dapr sidecar.
+The code inside the `process_batch` function is executed every 10 seconds (defined in [`binding-cron.yaml`](./src/components/binding-cron.yaml) in the `components` directory). The binding trigger looks for a route called via HTTP POST in your application by the Dapr sidecar.
 
-[**Program.cs**](./csharp/sdk/batch/program.cs#L33)
+[**Program.cs**](./src/dotnet/sdk/batch/program.cs#L33)
 
 ```cs
 app.MapPost($"/{cronBindingName}", async () => {
@@ -80,9 +80,9 @@ app.MapPost($"/{cronBindingName}", async () => {
 })
 ```
 
-The `batch-sdk` service uses the PostgreSQL output binding defined in the [`binding-postgres.yaml`](./csharp/components/binding-postgres.yaml) component to insert the `OrderId`, `Customer`, and `Price` records into the `orders` table.
+The `batch-sdk` service uses the PostgreSQL output binding defined in the [`binding-postgres.yaml`](./src/components/binding-postgres.yaml) component to insert the `OrderId`, `Customer`, and `Price` records into the `orders` table.
 
-[**Program.cs**](./csharp/sdk/batch/program.cs#L36)
+[**Program.cs**](./src/dotnet/sdk/batch/program.cs#L36)
 
 ```cs
 // ...
@@ -114,7 +114,7 @@ Notice, as specified above, the code invokes the output binding with the `OrderI
 == APP == Finished processing batch
 ```
 
-In a new terminal, verify the same data has been inserted into the database. Navigate to [`csharp/db`](./csharp/db/) and run the following:
+In a new terminal, verify the same data has been inserted into the database. Navigate to [`src/db`](./src/db/) and run the following:
 
 > Be sure the terminal that exectued `docker compose up` in the step above is still up and running
 
@@ -148,7 +148,7 @@ When you execute the `dapr run` command and specify the component path, the Dapr
 * Initializes the Cron [binding building block](https://docs.dapr.io/developing-applications/building-blocks/bindings/)
 * Calls the binding endpoint (`batch`) every 10 seconds
 
-The Cron [`binding-cron.yaml`](./csharp/components/binding-cron.yaml) file included for this quickstart contains the following:
+The Cron [`binding-cron.yaml`](./src/components/binding-cron.yaml) file included for this quickstart contains the following:
 
 ```yaml
 apiVersion: dapr.io/v1alpha1
@@ -174,7 +174,7 @@ When you execute the `dapr run` command and specify the component path, the Dapr
 
 With the `binding-postgres.yaml` component, you can easily swap out the backend database [binding](https://docs.dapr.io/reference/components-reference/supported-bindings/) without making code changes.
 
-The PostgreSQL [`binding-postgres.yaml`](./csharp/components/binding-postgres.yaml) file included for this quickstart contains the following:
+The PostgreSQL [`binding-postgres.yaml`](./src/components/binding-postgres.yaml) file included for this quickstart contains the following:
 
 ```yaml
 apiVersion: dapr.io/v1alpha1

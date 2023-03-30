@@ -22,11 +22,11 @@ For this example, you will need:
 
 ## Step 2: Set up the environment
 
-[Quickstarts repo](https://github.com/dapr/quickstarts/) was cloned and the `pub_sub/csharp/sdk/` directory was copied to [`csharp/sdk/`](./csharp/sdk/) local to this readme. Additionally, `pub_sub/components` was copied to [`csharp/components`](./csharp/components/).
+[Quickstarts repo](https://github.com/dapr/quickstarts/) was cloned and the `pub_sub/csharp/sdk/` directory was copied to [`src/dotnet/sdk/`](./src/dotnet/sdk/) local to this readme. Additionally, `pub_sub/components` was copied to [`src/components`](./src/components/).
 
 ## Step 3: Subscribe to topics
 
-In a terminal window, navigate to [`csharp/sdk/order-processor/`](./csharp/sdk/order-processor/) and run the following:
+In a terminal window, navigate to [`src/dotnet/sdk/order-processor/`](./src/dotnet/sdk/order-processor/) and run the following:
 
 ```bash
 dotnet restore
@@ -35,9 +35,9 @@ dotnet build
 dapr run --app-id order-processor --resources-path ../../components --app-port 7002 -- dotnet run
 ```
 
-In the `order-processor` subscriber, we're subscribing to the Redis instance called `orderpubsub` [(as defined in the `pubsub.yaml` component)](./csharp/components/pubsub.yaml) and the topic `orders`. This enables your app code to talk to the Redis comopnent instance through the Dapr sidecar.
+In the `order-processor` subscriber, we're subscribing to the Redis instance called `orderpubsub` [(as defined in the `pubsub.yaml` component)](./src/components/pubsub.yaml) and the topic `orders`. This enables your app code to talk to the Redis comopnent instance through the Dapr sidecar.
 
-[**Program.cs**](./csharp/sdk/order-processor/Program.cs#L17)
+[**Program.cs**](./src/dotnet/sdk/order-processor/Program.cs#L17)
 
 ```cs
 // Dapr subscription in [Topic] routes orders topic to this route
@@ -49,7 +49,7 @@ app.MapPost("/orders", [Topic("orderpubsub", "orders")] (Order order) => {
 
 ## Step 4: Publish a Topic
 
-In a new terminal window, navigate to [`csharp/sdk/checkout/`](./csharp/sdk/checkout/) and run the following:
+In a new terminal window, navigate to [`src/dotnet/sdk/checkout/`](./src/dotnet/sdk/checkout/) and run the following:
 
 ```bash
 dotnet restore
@@ -58,9 +58,9 @@ dotnet build
 dapr run --app-id checkout --resources-path ../../components -- dotnet run
 ```
 
-In the `checkout` publisher, we're publishing the `orderId` message to the Redis instance called `orderpubsub` [(as defined in the `pubsub.yaml` component)](./csharp/components/pubsub.yaml) and topic `orders`. As soon as the service starts, it publishes in a loop:
+In the `checkout` publisher, we're publishing the `orderId` message to the Redis instance called `orderpubsub` [(as defined in the `pubsub.yaml` component)](./src/components/pubsub.yaml) and topic `orders`. As soon as the service starts, it publishes in a loop:
 
-[**Program.cs**](./csharp/sdk/checkout/Program.cs#L8)
+[**Program.cs**](./src/dotnet/sdk/checkout/Program.cs#L8)
 
 ```cs
 using var client = new DaprClientBuilder().Build();
@@ -111,7 +111,7 @@ When you run `dapr.init`, Dapr creates a default Redis `pubsub.yaml` and runs a 
 
 With the `pubsub.yaml` component, you can easily swap out underlying components wihtout application code changes.
 
-The Redis [`pubsub.yaml`](./csharp/components/pubsub.yaml) file included for this quickstart contains:
+The Redis [`pubsub.yaml`](./src/components/pubsub.yaml) file included for this quickstart contains:
 
 ```yaml
 apiVersion: dapr.io/v1alpha1

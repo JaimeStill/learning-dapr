@@ -27,5 +27,6 @@ https://docs.dapr.io/
     * [State Management](./quickstarts/state-management/)
     * [Publish and Subscribe](./quickstarts/publish-subscribe/)
     * [Bindings](./quickstarts/bindings/)
+    * [Secrets Management](./quickstarts/secrets-management/)
 * [Tutorials](./tutorials)
 * [Developing Applications](./developing-applications)

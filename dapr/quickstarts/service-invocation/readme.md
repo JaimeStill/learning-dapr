@@ -20,11 +20,11 @@ For this example, you will need:
 
 ## Step 2: Set up the environment
 
-[Quickstarts repo](https://github.com/dapr/quickstarts/) was cloned and the `service_invocation/csharp/http` directory was copied to [`csharp/`](./csharp/) local to this readme.
+[Quickstarts repo](https://github.com/dapr/quickstarts/) was cloned and the `service_invocation/csharp/http` directory was copied to [`src/dotnet/`](./src/dotnet/) local to this readme.
 
 ## Step 3: Run `order-processor` service
 
-Change directory to [`./csharp/order-processor`](./csharp/order-processor/) and run:
+Change directory to [`./src/dotnet/order-processor`](./src/dotnet/order-processor/) and run:
 
 ```bash
 dotnet restore
@@ -33,11 +33,11 @@ dotnet build
 dapr run --app-port 7001 --app-id order-processor --app-protocol http --dapr-http-port 3501 -- dotnet run
 ```
 
-See working code from the order processor's [**Program.cs**](./csharp/order-processor/Program.cs#L10).
+See working code from the order processor's [**Program.cs**](./src/dotnet/order-processor/Program.cs#L10).
 
 ## Step 4: Run `checkout` service
 
-In a new terminal window, change directory to [`./csharp/checkout`](./csharp/checkout) and run:
+In a new terminal window, change directory to [`./src/dotnet/checkout`](./src/dotnet/checkout) and run:
 
 ```bash
 dotnet restore
@@ -46,7 +46,7 @@ dotnet build
 dapr run --app-id checkout --app-protocol http --dapr-http-port 3500 -- dotnet run
 ```
 
-In the [**Program.cs**](./csharp/checkout/Program.cs#L7) file for the `checkout` service, you'll notice there's no need to rewrite your app code to use Dapr's service invocation. You can enable service invocation simply by adding the `dapr-app-id` header, which specifies the ID of the target service:
+In the [**Program.cs**](./src/dotnet/checkout/Program.cs#L7) file for the `checkout` service, you'll notice there's no need to rewrite your app code to use Dapr's service invocation. You can enable service invocation simply by adding the `dapr-app-id` header, which specifies the ID of the target service:
 
 ```cs
 client.DefaultRequestHeaders.Add("dapr-app-id", "order-processor");
@@ -108,13 +108,13 @@ In the running `order-processor` service, you should see the following output:
 
 > The following only works in Linux / MacOS, but can be run in Windows via WSL. You will need to install Dapr CLI in WSL, then run `dapr uninstall` followed by `dapr init` to initialize the runtime for WSL as well. This will not affect your Windows Dapr initialization.
 
-You can run the Dapr applications in this quickstart with the [Multi-App Run template](). Instead of running two separate `dapr run` commands for the `order-processor` and `checkout` applications, run the following command from the root of [`./csharp`](./csharp/):
+You can run the Dapr applications in this quickstart with the [Multi-App Run template](). Instead of running two separate `dapr run` commands for the `order-processor` and `checkout` applications, run the following command from the root of [`./src/dotnet`](./src/dotnet/):
 
 ```bash
 dapr run -f .
 ```
 
-This will run the services defined in [`./csharp/dapr.yaml`](./csharp/dapr.yaml):
+This will run the services defined in [`./src/dotnet/dapr.yaml`](./src/dotnet/dapr.yaml):
 
 ```yaml
 version: 1

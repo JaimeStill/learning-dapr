@@ -18,20 +18,20 @@ For this example, you will need:
 
 ## Step 1: Set up the environment
 
-[Quickstarts repo](https://github.com/dapr/quickstarts/) was cloned and the `state_management/csharp/sdk/` directory was copied to [`csharp/sdk/`](./csharp/sdk/) local to this readme. Additionally, `state_management/resources` was copied to [`csharp/resources`](./csharp/resources/).
+[Quickstarts repo](https://github.com/dapr/quickstarts/) was cloned and the `state_management/csharp/sdk/` directory was copied to [`src/dotnet/sdk/`](./src/dotnet/sdk/) local to this readme. Additionally, `state_management/resources` was copied to [`src/resources`](./src/resources/).
 
 ## Step 2: Manipulate Service State
 
-In a terminal window, navigate to [`csharp/sdk/order-processor`](./csharp/sdk/order-processor/) and run the following:
+In a terminal window, navigate to [`src/dotnet/sdk/order-processor`](./src/dotnet/sdk/order-processor/) and run the following:
 
 ```bash
 dotnet restore
 dotnet build
 
-dapr run --app-id order-processor --resources-path ../../resources/ -- dotnet run
+dapr run --app-id order-processor --resources-path ../../../resources/ -- dotnet run
 ```
 
-The `order-processor` service writes, reads, and deletes an `orderId` key/value pair to the `statestore` instance [defined in the `statestore.yaml` component](). As soon as the service starts, it performs a loop. See [**Program.cs**](./csharp/sdk/order-processor/Program.cs).
+The `order-processor` service writes, reads, and deletes an `orderId` key/value pair to the `statestore` instance [defined in the `statestore.yaml` component](./src/resources/statestore.yaml). As soon as the service starts, it performs a loop. See [**Program.cs**](./src/dotnet/sdk/order-processor/Program.cs).
 
 ```cs
 var client = new DaprClientBuilder().Build();
@@ -78,7 +78,7 @@ When you run `dapr init`, Dapr creates a default Redis `statestore.yaml` and run
 
 With the `statestore.yaml` component, you can easily swap out the [state store]() without making code changes.
 
-The Redis [`statestore.yaml`](./csharp/resources/statestore.yaml) file included for this quickstart contains the following:
+The Redis [`statestore.yaml`](./src/resources/statestore.yaml) file included for this quickstart contains the following:
 
 ```yaml
 apiVersion: dapr.io/v1alpha1
