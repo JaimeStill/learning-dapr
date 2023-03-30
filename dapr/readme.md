@@ -26,5 +26,6 @@ https://docs.dapr.io/
     * [Service Invocation](./quickstarts/service-invocation/)
     * [State Management](./quickstarts/state-management/)
     * [Publish and Subscribe](./quickstarts/publish-subscribe/)
+    * [Bindings](./quickstarts/bindings/)
 * [Tutorials](./tutorials)
 * [Developing Applications](./developing-applications)
