@@ -29,5 +29,6 @@ https://docs.dapr.io/
     * [Bindings](./quickstarts/bindings/)
     * [Secrets Management](./quickstarts/secrets-management/)
     * [Configuration](./quickstarts/configuration/)
+    * [Workflow](./quickstarts/workflow/)
 * [Tutorials](./tutorials)
 * [Developing Applications](./developing-applications)

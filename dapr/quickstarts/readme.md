@@ -6,3 +6,4 @@
 * [Bindings](./bindings/)
 * [Secrets Management](./secrets-management/)
 * [Configuration](./configuration/)
+* [Workflow](./workflow/)
